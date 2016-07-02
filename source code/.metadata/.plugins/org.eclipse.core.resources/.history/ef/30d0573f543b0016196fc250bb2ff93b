@@ -1,0 +1,14 @@
+package com.jdbc;
+
+public class TestFloat {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		float f= 10.2f;
+		int i = 5;
+		System.out.println(f*i);
+	}
+
+}

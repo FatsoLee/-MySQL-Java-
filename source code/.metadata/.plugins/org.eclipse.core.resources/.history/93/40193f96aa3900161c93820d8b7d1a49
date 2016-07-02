@@ -1,0 +1,41 @@
+package com.jdbc;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+public class JDBC_Examine {
+	public static void main(String[] args) {
+		Statement st=null;
+		
+		st=Utils.getSt();
+		try {
+			//4、执行
+			String sql = "select * from employee";
+			ResultSet rs = st.executeQuery(sql);
+			
+			//5、处理执行结果
+			System.out.println("Eid\tEname\tsex\tEphone\t\tEnumber\t\tposition\tsalary"
+					+ "\tpassword\tage\n");
+			while(rs.next()){
+				int eid = rs.getInt(1);
+				String ename = rs.getString(2);
+				String sex = rs.getString(3);
+				String ephone = rs.getString(4);
+				String enumber = rs.getString(5);
+				String position = rs.getString(6);
+				int salary = rs.getInt(7);
+				String password = rs.getString(8);
+				int age = rs.getInt(9);
+				System.out.println(eid+"\t"+ename+"\t"+sex+"\t"+ephone+"\t"+enumber+"\t"
+						+position+"\t\t"+salary+"\t"+password+"\t\t"+age+"\n");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally{
+			Utils.close(st);
+		}
+	}
+}

@@ -1,0 +1,17 @@
+package UI;
+
+import java.util.Date;
+
+public class test {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Date ldate = new Date();// new Date()为获取当前系统时间
+		System.out.println(new Date());// new Date()为获取当前系统时间
+	}
+
+}
